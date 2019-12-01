@@ -20,6 +20,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
     @Inject
     ViewModelProviderFactory factory;
     SplashViewModel mSplashViewModel;
+    ActivitySplashBinding activitySplashBinding;
 
     @Override
     public int getBindingVariable() {
@@ -54,6 +55,8 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activitySplashBinding = getViewDataBinding();
+        mSplashViewModel.loadSplashImage(activitySplashBinding.imageView);
         mSplashViewModel.setNavigator(this);
         mSplashViewModel.doSplashScreenWork();
 

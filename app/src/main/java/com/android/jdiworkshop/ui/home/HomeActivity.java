@@ -24,8 +24,6 @@ import dagger.android.DispatchingAndroidInjector;
 
 public class HomeActivity  extends BaseActivity<ActivityHomeBinding, HomeViewModel> implements HomeNavigator {
 
-//    @Inject
-//    DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
     @Inject
     ViewModelProviderFactory factory;
     HomeViewModel homeViewModel;
@@ -78,6 +76,8 @@ public class HomeActivity  extends BaseActivity<ActivityHomeBinding, HomeViewMod
     }
 
     private void setUp() {
+        homeViewModel.onNavMenuCreated();
+
 
     }
 }

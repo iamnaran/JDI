@@ -16,7 +16,7 @@ import java.util.List;
 
 public class HomeViewModel extends BaseViewModel<HomeNavigator> {
 
-    public static final int NO_ACTION = -1, ACTION_ADD_ALL = 0, ACTION_DELETE_SINGLE = 1;
+//    public static final int NO_ACTION = -1, ACTION_ADD_ALL = 0, ACTION_DELETE_SINGLE = 1;
 
     private final ObservableField<String> appVersion = new ObservableField<>();
 
@@ -30,7 +30,6 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator> {
 
     private final ObservableField<String> userProfilePicUrl = new ObservableField<>();
 
-    private int action = NO_ACTION;
 
     public HomeViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
         super(dataManager, schedulerProvider);
@@ -38,20 +37,10 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator> {
 //        loadQuestionCards();
     }
 
-    public int getAction() {
-        return action;
-    }
 
     public ObservableField<String> getAppVersion() {
         return appVersion;
     }
-
-//
-//    public void setHomeDataList(List<QuestionCardData> questionCardDatas) {
-//        action = ACTION_ADD_ALL;
-//        questionDataList.clear();
-//        questionDataList.addAll(questionCardDatas);
-//    }
 
     public ObservableField<String> getUserEmail() {
         return userEmail;
@@ -115,4 +104,6 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator> {
     public void updateAppVersion(String version) {
         appVersion.set(version);
     }
+
+
 }

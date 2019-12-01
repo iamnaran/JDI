@@ -22,13 +22,6 @@
         android:background="@color/black">
 
 
-        <ProgressBar
-            android:id="@+id/address_looking_up"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />
 
 
         <ScrollView
@@ -46,7 +39,7 @@
                     android:layout_gravity="center|top"
                     android:layout_marginTop="60dp"
                     android:gravity="center"
-                    android:text="e-Library"
+                    android:text="@string/app_name"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -129,7 +122,9 @@
                             android:layout_marginTop="30dp"
                             android:onClick="@{() -> viewModel.onServerLoginClick()}"
                             android:padding="10dp"
+                            android:background="@drawable/background_fill_primary_corner"
                             android:text="@string/login"
+                            android:textColor="@color/white"
                             android:textSize="18sp" />
                     </LinearLayout>
 
@@ -169,6 +164,15 @@
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop" />
         </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/address_looking_up"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />
+
 
     </RelativeLayout>
 

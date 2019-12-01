@@ -26,7 +26,7 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="e-Library Home Page" />
+            android:text="@string/app_name" />
 
         <ImageView
             android:id="@+id/iv_profile_pic"
@@ -37,17 +37,17 @@
 
         <TextView
             android:id="@+id/tv_name"
-            style="@style/TextStyle.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textColor="@color/black"
             android:text="@{viewModel.userName}" />
 
         <TextView
             android:id="@+id/tv_email"
-            style="@style/TextStyle.Title.Sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@{viewModel.userEmail}" />
 
     </LinearLayout>
