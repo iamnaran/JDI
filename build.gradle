@@ -48,13 +48,20 @@ ext {
     roomDatabaseVersion = '2.2.2'
     rx2FastAndroidNetworking = '1.0.1'
 
-    dagger2Version = '2.25.2'
+//    dagger2Version = '2.24'
+    dagger2Version = '2.16'
     rxjava2Version = '2.1.9'
     rxandroidVersion = '2.0.2'
     placeholderviewVersion = '0.6.1'
     debugDBVersion = '1.0.3'
-    timberVersion = '4.7.1'
-    lifecycleVersion = '2.1.0'
+    timberVersion = '4.5.1'
+    lifecycleVersion = '2.0.0'
+    rxjava2Version = '2.1.9'
+    rxandroidVersion = '2.0.2'
+    placeholderviewVersion = '0.6.1'
+    debugDBVersion = '1.0.3'
+    timberVersion = '4.5.1'
+    lifecycleVersion = '2.0.0'
 
     // Test dependencies
     junitVersion = '4.12'

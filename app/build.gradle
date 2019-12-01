@@ -14,8 +14,10 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId "com.android.jdiworkshop"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -28,12 +30,12 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "https://picsum.photos/v2/")
+            buildConfigField("String", "BASE_URL", "\"https://elibrary.smartgov.app/api\"")
         }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "BASE_URL", "https://picsum.photos/v2/")
+            buildConfigField("String", "BASE_URL", "\"https://elibrary.smartgov.app/api\"")
         }
     }
     compileOptions {
@@ -50,8 +52,10 @@ dependencies {
     // android support libraries
     implementation "androidx.appcompat:appcompat:$rootProject.supportLibraryVersion"
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+
     implementation "androidx.cardview:cardview:$rootProject.cardViewVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
+
     implementation "androidx.vectordrawable:vectordrawable:$rootProject.vectorDrawableVersion"
     implementation "androidx.vectordrawable:vectordrawable-animated:$rootProject.animatedVectorDrawableVersion"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
@@ -59,9 +63,6 @@ dependencies {
     // network
     implementation "com.amitshekhar.android:rx2-android-networking:$rootProject.rx2FastAndroidNetworking"
 
-    // database
-    implementation "androidx.room:room-rxjava2:$rootProject.roomDatabaseVersion"
-    annotationProcessor "androidx.room:room-compiler:$rootProject.roomDatabaseVersion"
 
     // font
     implementation "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
@@ -80,10 +81,13 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
     annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.dagger2Version"
     implementation "com.google.dagger:dagger-android-support:$rootProject.dagger2Version"
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation 'javax.inject:javax.inject:1'
 
     // reactive
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2Version"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+
 
     // swipe view
     implementation "com.mindorks:placeholderview:$rootProject.placeholderviewVersion"
