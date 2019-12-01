@@ -43,10 +43,9 @@ public class SplashViewModel extends BaseViewModel<SplashNavigator> {
 
     }
 
-    void loadSplashImage(ImageView imageView) {
+    void loadSplashImage(int url, ImageView imageView) {
 
-        Log.e( "loadSplashImage: ","called" );
-        Glide.with(imageView.getContext()).load(R.drawable.ic_app_logo).into(imageView);
+        Glide.with(imageView.getContext()).load(url).into(imageView);
 
     }
 

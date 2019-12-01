@@ -5,13 +5,16 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
+import com.android.jdiworkshop.BR;
 import com.android.jdiworkshop.R;
 import com.android.jdiworkshop.ViewModelProviderFactory;
 import com.android.jdiworkshop.databinding.ActivitySplashBinding;
 import com.android.jdiworkshop.ui.base.BaseActivity;
 import com.android.jdiworkshop.ui.home.HomeActivity;
 import com.android.jdiworkshop.ui.login.LoginActivity;
+import com.bumptech.glide.Glide;
 
 import javax.inject.Inject;
 
@@ -21,6 +24,9 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
     ViewModelProviderFactory factory;
     SplashViewModel mSplashViewModel;
     ActivitySplashBinding activitySplashBinding;
+
+    private final int SPLASH_TIME_OUT = 1500;
+
 
     @Override
     public int getBindingVariable() {
@@ -34,7 +40,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
 
     @Override
     public SplashViewModel getViewModel() {
-        mSplashViewModel = ViewModelProviders.of(this,factory).get(SplashViewModel.class);
+        mSplashViewModel = ViewModelProviders.of(this, factory).get(SplashViewModel.class);
         return mSplashViewModel;
     }
 
@@ -47,16 +53,20 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
 
     @Override
     public void openHomeActivity() {
-        Intent intent = HomeActivity.newIntent(SplashActivity.this);
-        startActivity(intent);
-        finish();
+
+        new Handler().postDelayed(() -> {
+            Intent intent = HomeActivity.newIntent(SplashActivity.this);
+            startActivity(intent);
+            finish();
+        }, SPLASH_TIME_OUT);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activitySplashBinding = getViewDataBinding();
-        mSplashViewModel.loadSplashImage(activitySplashBinding.imageView);
+        mSplashViewModel.loadSplashImage(R.drawable.ic_app_logo, activitySplashBinding.imageView);
         mSplashViewModel.setNavigator(this);
         mSplashViewModel.doSplashScreenWork();
 

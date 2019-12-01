@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.android.jdiworkshop.R;
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
@@ -57,6 +58,7 @@ public final class CommonUtils {
 
         return new String(buffer, "UTF-8");
     }
+
 
 
     public static String getCurrentDatAndTime(){

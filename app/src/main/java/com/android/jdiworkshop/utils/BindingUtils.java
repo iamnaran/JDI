@@ -51,4 +51,5 @@ public final class BindingUtils {
         Context context = imageView.getContext();
         Glide.with(context).load(url).into(imageView);
     }
+
 }
