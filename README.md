@@ -1,8 +1,22 @@
 # Android - JAVA Sample Project Template 2020
 
+This project contains sample project setup with login and splash screen.
+Build An App From Scratch with professional coding pattern.
 Android Injectors, Dagger2, Shared Pref, rXjava, Fast Android Networking Library
 
 
+## Installation
+
+Clone Project
+
+
+```bash
+https://github.com/iamnaran/JDI.git
+```
+
+## Usage
+
+```python
 Things before getting started.
 
 1. Android Injection & Dagger2
@@ -24,8 +38,21 @@ Things before getting started.
 4. Data Binding
 
   A. https://android.jlelse.eu/binding-adapters-with-kotlin-part-1-78b957ad6b8b
-  
-  
+ 
+```
+
+## Contributing
+
+Pull requests are welcome.
+
+For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+
+
+
+
 
 
 
