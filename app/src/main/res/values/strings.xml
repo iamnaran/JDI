@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">The Travelling Book</string>
+    <string name="app_name">Gaida Movies</string>
     <string name="app_market_link">app_market_link</string>
     <string name="app_google_play_store_link">play_store_link</string>
 
@@ -29,8 +29,12 @@
     <!--Login-->
     <string name="login_dummy">Login Dummy</string>
     <string name="login">Login</string>
-    <string name="email">Email</string>
+    <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="invalid_email_password">Invalid email</string>
+    <string name="invalid_email_password">Invalid username</string>
+    <string name="empty_title">No data availabe</string>
+    <string name="please_retry">Please try again later</string>
+    <string name="retry">Retry</string>
+
 
 </resources>

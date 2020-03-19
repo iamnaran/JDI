@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.android.jdiworkshop.ui.login.LoginViewModel" />
+            type="com.android.nunu.ui.login.LoginViewModel" />
 
     </data>
 
@@ -18,8 +18,73 @@
     <RelativeLayout
         android:id="@+id/activityMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black">
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/main_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+
+
+
+
+        <ProgressBar
+            android:id="@+id/address_looking_up"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-7dp"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            android:scaleY="2" />
+
+
+        <LinearLayout
+            android:id="@+id/logoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:animateLayoutChanges="true"
+            android:gravity="bottom|start"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|start"
+                android:animateLayoutChanges="true"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_app_logo"
+                    android:scaleType="centerCrop"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="2"
+                    android:adjustViewBounds="true"
+                    android:animateLayoutChanges="true" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
 
 
 
@@ -30,7 +95,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
+                android:layout_height="wrap_content">
+
 
                 <TextView
                     android:id="@+id/title"
@@ -39,18 +105,17 @@
                     android:layout_gravity="center|top"
                     android:layout_marginTop="60dp"
                     android:gravity="center"
+                    android:layout_marginBottom="20dp"
                     android:text="@string/app_name"
-                    android:textColor="#ffffff"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"/>
 
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:layout_below="@+id/title"
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="80dp"
@@ -74,14 +139,13 @@
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/etEmail"
-                                style="@style/TextStyle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@color/transparent"
                                 android:cursorVisible="true"
                                 android:gravity="center|left|bottom"
-                                android:hint="@string/email"
-                                android:text="android@gmail.com"
+                                android:hint="@string/username"
+                                android:text="iamnaran"
                                 android:inputType="textEmailAddress"
                                 android:maxLength="50"
                                 android:textColor="@color/black_effective"
@@ -100,7 +164,6 @@
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/etPassword"
-                                style="@style/TextStyle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@color/transparent"
@@ -108,7 +171,7 @@
                                 android:gravity="center|left|bottom"
                                 android:inputType="textPassword"
                                 android:maxLength="50"
-                                android:text="android"
+                                android:text="password"
                                 android:textColor="@color/black_effective"
                                 android:textSize="18sp" />
 
@@ -136,42 +199,8 @@
         </ScrollView>
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
-            android:layout_marginBottom="40dp"
-            android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/ibGoogleLogin"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@color/transparent"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop" />
-
-            <!--                    android:onClick="@{() -> viewModel.onFbLoginClick()}"-->
-
-
-            <ImageButton
-                android:id="@+id/ibFbLogin"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
-                android:background="@color/transparent"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop" />
         </LinearLayout>
-
-        <ProgressBar
-            android:id="@+id/address_looking_up"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />
 
 
     </RelativeLayout>

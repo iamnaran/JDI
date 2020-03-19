@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.android.jdiworkshop.ui.splash.SplashViewModel" />
+            type="com.android.nunu.ui.splash.SplashViewModel" />
 
     </data>
 
@@ -16,7 +16,7 @@
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DA2B2B"
+        android:background="?attr/colorPrimaryDark"
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <ImageView
